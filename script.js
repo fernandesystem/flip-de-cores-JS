@@ -24,5 +24,29 @@ const generateColor = function () {
         
     }
 
-}
+    lastCode = hexCode;
+
+    updateTxt(hexCode);
+
+    changeBg(hexCode);
+
+    const red =parseInt (hexCode.substring(0,2), 16);
+    const green = parseInt(hexCode(4), 16);
+    const blue = parseInt (hexCode(4), 16);
+    const avg = (red + green + blue) / 3;
+
+    if (avg > 128) {
+        document.body.style.color = "#000000";
+
+        
+    } else {
+        document.body.style.color = "#ffffff";
+    }
+    
+};
+const changeBg = function (code) {
+    document.body.style.backgroundColor = `#$(code)`;
+};
+
+changeBTN.addEventListener("click", generateColor);
 
